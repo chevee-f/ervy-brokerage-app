@@ -1,0 +1,205 @@
+@import '../../App.module.scss';
+
+.waybillPage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.waybillPage__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.waybillPage__headerUpload {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.waybillPage__headerFilename {
+  max-width: 260px;
+}
+
+.waybillPage__layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  height: calc(100vh - 180px);
+  max-height: calc(100vh - 180px);
+  padding-top: 12px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.waybillPage__left {
+  flex: 0 0 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 4px;
+}
+
+.waybillPage__leftHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.waybillPage__leftHeaderStats {
+  font-size: 12px;
+}
+
+.waybillPage__search {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.waybillPage__filters {
+  gap: 4px;
+}
+
+.waybillPage__list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.waybillPage__item {
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.waybillPage__item--selected {
+  border-color: #1677ff;
+  background-color: #e6f4ff;
+}
+
+.waybillPage__item--reviewed {
+  border-color: #b7eb8f;
+  background-color: #f6ffed;
+}
+
+.waybillPage__itemContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.waybillPage__itemTag {
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.waybillPage__itemRefs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.waybillPage__right {
+  flex: 1;
+  min-height: 200px;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.waybillPage__topRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.waybillPage__topCard {
+  flex: 0 0 260px;
+  max-width: 320px;
+}
+
+.waybillPage__selectedRef {
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  padding-bottom: 8px;
+  margin: 0 -16px 16px;
+  padding-inline: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.waybillPage__housewayRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.waybillPage__housewayInput {
+  flex: 1;
+}
+
+.waybillPage__printTitle {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.waybillPage__detailsCard {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.waybillPage__detailsRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.waybillPage__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  pointer-events: all;
+}
+
+.printableDiv { 
+  display: block;
+  // display: none;
+  // position: absolute;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.printableTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.printableTable th,
+.printableTable td {
+  border: 1px solid #000;
+  padding: 4px 6px;
+  font-size: 12px;
+}

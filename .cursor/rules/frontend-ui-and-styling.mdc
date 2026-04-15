@@ -1,0 +1,33 @@
+---
+description: Frontend UI and styling (Ant Design + SCSS modules)
+globs: src/**/*.{ts,tsx,js,jsx,scss,css}
+alwaysApply: false
+---
+
+# Frontend UI & styling
+
+## Component library
+
+- Use **Ant Design (antd)** components by default, and prefer the **latest stable** APIs/patterns.
+- Don’t hand-roll UI primitives (buttons, inputs, modals, tables) if Ant Design provides them.
+- Keep Ant Design theming consistent; prefer tokens/theme config over one-off overrides.
+
+## Custom CSS
+
+- If custom styling is needed, use **SCSS Modules** (`*.module.scss`) instead of global CSS.
+- Keep styles colocated with the component and name classes by intent (not by appearance).
+
+Example:
+
+```tsx
+import { Button } from "antd";
+import styles from "./TradeForm.module.scss";
+
+export function TradeFormSubmit() {
+  return (
+    <Button type="primary" className={styles.submit}>
+      Submit
+    </Button>
+  );
+}
+```

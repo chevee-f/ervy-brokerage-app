@@ -1,0 +1,65 @@
+.appShell {
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 10% 0%, rgba(22, 119, 255, 0.14), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(82, 196, 26, 0.12), transparent 55%),
+    #f5f5f5;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 10px;
+  height: 49px;
+  min-height: 49px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+.brandMark {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1677ff, #52c41a);
+  box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.14);
+}
+
+.brandTitle {
+  margin: 0 !important;
+}
+
+.content {
+  padding: 8px;
+}
+
+.container {
+  // max-width: 1040px;
+  // margin: 0 auto;
+}
+
+.stack {
+  width: 100%;
+}
+
+.pageTitle {
+  margin-bottom: 4px !important;
+}
+
+.card {
+  border-radius: 16px;
+}
+
+.collapseButton {
+  display: flex;
+  align-items: flex-start;
+  padding: 27px 4px 0;
+  border-right: 1px solid #f0f0f0;
+}
+
+.counterText {
+  margin-left: 8px;
+}

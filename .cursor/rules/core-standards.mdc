@@ -1,0 +1,26 @@
+---
+description: Repo-wide coding style (human-readable, explain intent)
+alwaysApply: true
+---
+
+# Core standards
+
+- Prefer simple, readable solutions over clever abstractions.
+- Use clear names (avoid overly generic names like `data`, `thing`, `tmp`).
+- Keep functions small; extract helpers when logic branches or repeats.
+- Error handling: handle expected failures explicitly and return actionable messages.
+
+## Comments (required on functions)
+
+- Add a short JSDoc/TSDoc comment for exported functions and any non-trivial internal function.
+- Comments should explain **intent and constraints** (the “why”), not narrate obvious code.
+- Include parameter/return meaning when it’s not obvious from types alone.
+
+Example:
+
+```ts
+/** Calculates brokerage fee using current pricing rules (percent, min fee, caps). */
+export function calculateBrokerageFee(input: FeeInput): Money {
+  // ...
+}
+```
