@@ -346,11 +346,11 @@ export function MotortradePage() {
           <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: '50px'  }}>
             <div>
               <div style={{ display: 'flex', marginBottom: 11 }}>
-                <div style={{ marginRight: '119px' }}>Delivery From:</div>
+                <div style={{ width: '155px' }}>Delivery From:</div>
                 <div>{selected.deliveryFrom}</div>
               </div>
               <div style={{ display: 'flex', marginBottom: 11 }}>
-                <div style={{ marginRight: '134px' }}>Delivery To:</div>
+                <div style={{ width: '155px' }}>Delivery To:</div>
                 <div>{selected.deliveryTo}</div>
               </div>
             </div>
@@ -366,14 +366,14 @@ export function MotortradePage() {
             </div>
           </div>
           <div style={{ display: 'flex' }}>
-            <div>Address: </div>
-            <div style={{ width: '50%', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '150px', marginRight: '50px' }}></div>
+            <div style={{ width: '155px' }}>Address: </div>
+            <div style={{ width: '50%', borderBottomWidth: '1px', borderBottom: '1px solid black', marginRight: '50px' }}></div>
           </div>
-          <div style={{ marginTop: '50px' }}>
+          <div style={{ marginTop: '23px' }}>
             <table className={styles.printableTable}>
               <thead>
                 <tr>
-                  <th style={{ width: '300px' }}>MODEL</th>
+                  <th style={{ width: '235px' }}>MODEL</th>
                   <th>QTY</th>
                   <th>COLOR</th>
                   <th>FRAME</th>
