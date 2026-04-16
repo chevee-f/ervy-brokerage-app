@@ -91,11 +91,11 @@ export function MotortradePage() {
     let printHtml = ''
 
     if (type === 'all') {
-      printHtml += getPrintHtml('TTC COPY')
+      printHtml += getPrintHtml('')
       printHtml += pageBreak
-      printHtml += getPrintHtml('CUSTOMER COPY')
+      printHtml += getPrintHtml('')
       printHtml += pageBreak
-      printHtml += getPrintHtml('CARRIER COPY')
+      printHtml += getPrintHtml('')
     } else {
       const label =
         type === 'ttc' ? 'TTC COPY' : type === 'customer' ? 'CUSTOMER COPY' : 'CARRIER COPY'
@@ -128,9 +128,6 @@ export function MotortradePage() {
       return `
         <div style='position: relative; padding-bottom: 20px; font-size: 12px;'>
           ${content.outerHTML}
-          <div style='position: absolute; right: 200px; font-size: 14px; font-weight: bold;'>
-            <span>${label}</span>
-          </div>
         </div>
       `
     }
@@ -343,42 +340,42 @@ export function MotortradePage() {
       {/* Printable DOM block for printing selected record */}
       {selected && selectedId && (
         <div className={styles.printableDiv} id={`viewer-content-${selectedId}`}>
-          <div style={{ textAlign: 'center' }}>ERVY LOGISTICS</div>
-          <div style={{ textAlign: 'center' }}>PRK BANAWAG TAWAGAN NORTE, LABANGAN ZAMBOANGA DEL SUR</div>
-          <div style={{ textAlign: 'center' }}>Cp. # 09451659947 / 09451098670</div>
-          <div style={{ textAlign: 'center' }}>DELIVERY RECEIPT</div>
+          <div style={{ textAlign: 'center', marginBottom: 7 }}>ERVY LOGISTICS</div>
+          <div style={{ textAlign: 'center', marginBottom: 7, fontSize: 14 }}>PRK BANAWAG TAWAGAN NORTE, LABANGAN ZAMBOANGA DEL SUR</div>
+          <div style={{ textAlign: 'center', marginBottom: 7 }}>Cp. # 09451659947 / 09451098670</div>
+          <div style={{ textAlign: 'center', marginBottom: 7, fontSize: 14 }}>DELIVERY RECEIPT</div>
         
           <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: '50px'  }}>
             <div>
-              <div style={{ display: 'flex' }}>
-                <div style={{ marginRight: '13px' }}>Delivery From:</div>
+              <div style={{ display: 'flex', marginBottom: 11 }}>
+                <div style={{ marginRight: '119px' }}>Delivery From:</div>
                 <div>{selected.deliveryFrom}</div>
               </div>
-              <div style={{ display: 'flex' }}>
-                <div style={{ marginRight: '32px' }}>Delivery To:</div>
+              <div style={{ display: 'flex', marginBottom: 11 }}>
+                <div style={{ marginRight: '134px' }}>Delivery To:</div>
                 <div>{selected.deliveryTo}</div>
               </div>
             </div>
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: 180 }}>
-                <div>WAYBILL NO.</div>
+            <div style={{ width: '230px' }}>
+              <div style={{ display: 'flex', marginBottom: 11 }}>
+                <div style={{ width: '80px' }}>WAYBILL NO.</div>
                 <div>{selected.waybillNo}</div>
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', width: 180 }}>
-                <div>KMPC DR No.</div>
+              <div style={{ display: 'flex', marginBottom: 11 }}>
+                <div style={{ width: '80px' }}>KMPC DR No.</div>
                 <div>{selected.kmpcDrNo}</div>
               </div>
             </div>
           </div>
           <div style={{ display: 'flex' }}>
             <div>Address: </div>
-            <div style={{ width: '100%', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '50px', marginRight: '50px' }}></div>
+            <div style={{ width: '50%', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '150px', marginRight: '50px' }}></div>
           </div>
           <div style={{ marginTop: '50px' }}>
             <table className={styles.printableTable}>
               <thead>
                 <tr>
-                  <th>MODEL</th>
+                  <th style={{ width: '300px' }}>MODEL</th>
                   <th>QTY</th>
                   <th>COLOR</th>
                   <th>FRAME</th>
@@ -388,47 +385,60 @@ export function MotortradePage() {
                 </tr>
               </thead>
               <tbody>
-                {(selected.items ?? []).map((it, i) => (
-                  <tr key={i}>
-                    <td>{it.model}</td>
-                    <td>{it.qty ?? ''}</td>
-                    <td>{it.color}</td>
-                    <td>{it.frame}</td>
-                    <td>{it.engine}</td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                ))}
+                {(() => {
+                  const rows = selected.items ?? []
+                  const rowCount = Math.max(8, rows.length)
+                  return Array.from({ length: rowCount }, (_, i) => {
+                    const it = rows[i]
+                    return (
+                      <tr key={i}>
+                        <td style={{ textAlign: 'center' }}>{it?.model ?? ''}</td>
+                        <td style={{ textAlign: 'center' }}>{it?.qty ?? ''}</td>
+                        <td style={{ textAlign: 'center' }}>{it?.color ?? ''}</td>
+                        <td style={{ textAlign: 'center' }}>{it?.frame ?? ''}</td>
+                        <td style={{ textAlign: 'center' }}>{it?.engine ?? ''}</td>
+                        <td style={{ textAlign: 'center' }}>{'\u00A0'}</td>
+                        <td style={{ textAlign: 'center' }}>{'\u00A0'}</td>
+                      </tr>
+                    )
+                  })
+                })()}
               </tbody>
             </table>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '50px', marginBottom: '50px' }}> {/* footer */}
-          <div>
-            <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '70%', margin: '30px auto 50px' }}> {/* footer */}
+          <div style={{ width: '280px' }}>
+            <div style={{ display: 'flex', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>Trucking Name:</div>
-              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '15px'}}></div>
             </div>
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>Date and Time:</div>
-              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '15px'}}></div>
             </div>
           </div>
           <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '330px' }}>
+            <div style={{ display: 'flex', width: '290px', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>TRUCK PLATE NO.:</div>
-              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+              <div style={{ width: '60%', marginLeft: '15px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '330px' }}>
+            <div style={{ display: 'flex', width: '290px', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>DRIVER NAME:</div>
-              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+              <div style={{ width: '60%', marginLeft: '15px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+                <div style={{ marginTop: '23px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+              </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '330px' }}>
+            <div style={{ display: 'flex', width: '290px', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>HELPER NAME:</div>
-              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+              <div style={{ width: '60%', marginLeft: '15px', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+                <div style={{ marginTop: '23px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+              </div>
             </div>
           </div>
         </div>
-        <div style={{ textAlign: 'center', fontSize: '12px' }}>NOTE: THIS COMPANY IS NOT RESPONSIBLE FOR THE CONTENT OF ANY PACKAGES DELIVERED IN APPARENT GOOD ORDER</div>
+        <div style={{ textAlign: 'center', fontSize: '12px', marginBottom: 7 }}>NOTE: THIS COMPANY IS NOT RESPONSIBLE FOR THE CONTENT OF ANY PACKAGES DELIVERED IN APPARENT GOOD ORDER</div>
         <div style={{ textAlign: 'center', fontSize: '12px' }}>ANY DELAY TO THE TRUCK VERIFY THE CONTENT OF EACH PACKAGES WILL BE AT YOUR EXPENSES.</div>
         </div>
       )}
