@@ -124,15 +124,13 @@ export function MotortradePage() {
 
     // Print chosen copies, each starting on a new page.
     const content = document.getElementById(`viewer-content-${selectedId}`) ?? new HTMLElement()
-    const getPrintHtml = (label: string) => {
+    const getPrintHtml = () => {
       return `
         <div style='position: relative; padding-bottom: 20px; font-size: 12px;'>
           ${content.outerHTML}
         </div>
       `
     }
-    const labelFor = (t: (typeof selectedTypes)[number]) =>
-      t === 'ttc' ? 'TTC COPY' : t === 'customer' ? 'CUSTOMER COPY' : 'CARRIER COPY'
     const pageBreak = `<div style="page-break-after: always; break-after: page;"></div>`
 
     const printWindow = window.open('', '', 'width=920,height=650') ?? new Window()
@@ -145,8 +143,8 @@ export function MotortradePage() {
     `
 
     let html = ''
-    selectedTypes.forEach((t, i) => {
-      html += getPrintHtml(labelFor(t))
+    selectedTypes.forEach((_, i) => {
+      html += getPrintHtml()
       if (i < selectedTypes.length - 1) html += pageBreak
     })
 
