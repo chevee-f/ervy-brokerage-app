@@ -358,11 +358,11 @@ export function MotortradePage() {
           <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: '50px'  }}>
             <div>
               <div style={{ display: 'flex', marginBottom: 11 }}>
-                <div style={{ width: '155px' }}>Delivery From:</div>
+                <div style={{ width: '95px' }}>Delivery From:</div>
                 <div>{selected.deliveryFrom}</div>
               </div>
               <div style={{ display: 'flex', marginBottom: 11 }}>
-                <div style={{ width: '155px' }}>Delivery To:</div>
+                <div style={{ width: '95px' }}>Delivery To:</div>
                 <div>{selected.deliveryTo}</div>
               </div>
             </div>
@@ -378,14 +378,14 @@ export function MotortradePage() {
             </div>
           </div>
           <div style={{ display: 'flex' }}>
-            <div style={{ width: '155px' }}>Address: </div>
-            <div style={{ width: '50%', borderBottomWidth: '1px', borderBottom: '1px solid black', marginRight: '50px' }}></div>
+            <div style={{ width: '95px' }}>Address: </div>
+            <div style={{ width: '335px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginRight: '50px' }}></div>
           </div>
           <div style={{ marginTop: '23px' }}>
             <table className={styles.printableTable}>
               <thead>
                 <tr>
-                  <th style={{ width: '235px' }}>MODEL</th>
+                  <th style={{ width: '200px' }}>MODEL</th>
                   <th>QTY</th>
                   <th>COLOR</th>
                   <th>FRAME</th>
@@ -416,7 +416,7 @@ export function MotortradePage() {
               </tbody>
             </table>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '70%', margin: '30px auto 50px' }}> {/* footer */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '580px', margin: '30px auto 50px' }}> {/* footer */}
           <div style={{ width: '280px' }}>
             <div style={{ display: 'flex', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>Trucking Name:</div>
