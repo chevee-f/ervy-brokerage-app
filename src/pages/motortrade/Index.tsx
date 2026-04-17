@@ -357,21 +357,21 @@ export function MotortradePage() {
         
           <div style={{ display: 'flex', justifyContent: 'space-between', marginRight: '50px'  }}>
             <div>
-              <div style={{ display: 'flex', marginBottom: 11 }}>
+              <div style={{ display: 'flex', marginBottom: 7 }}>
                 <div style={{ width: '95px' }}>Delivery From:</div>
                 <div>{selected.deliveryFrom}</div>
               </div>
-              <div style={{ display: 'flex', marginBottom: 11 }}>
+              <div style={{ display: 'flex', marginBottom: 7 }}>
                 <div style={{ width: '95px' }}>Delivery To:</div>
                 <div>{selected.deliveryTo}</div>
               </div>
             </div>
             <div style={{ width: '230px' }}>
-              <div style={{ display: 'flex', marginBottom: 11 }}>
+              <div style={{ display: 'flex', marginBottom: 7 }}>
                 <div style={{ width: '80px' }}>WAYBILL NO.</div>
                 <div>{selected.waybillNo}</div>
               </div>
-              <div style={{ display: 'flex', marginBottom: 11 }}>
+              <div style={{ display: 'flex', marginBottom: 7 }}>
                 <div style={{ width: '80px' }}>KMPC DR No.</div>
                 <div>{selected.kmpcDrNo}</div>
               </div>
@@ -381,7 +381,7 @@ export function MotortradePage() {
             <div style={{ width: '95px' }}>Address: </div>
             <div style={{ width: '335px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginRight: '50px' }}></div>
           </div>
-          <div style={{ marginTop: '23px' }}>
+          <div style={{ marginTop: '19px' }}>
             <table className={styles.printableTable}>
               <thead>
                 <tr>
@@ -416,34 +416,34 @@ export function MotortradePage() {
               </tbody>
             </table>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '580px', margin: '30px auto 50px' }}> {/* footer */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '580px', margin: '20px auto 30px' }}> {/* footer */}
           <div style={{ width: '280px' }}>
-            <div style={{ display: 'flex', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
-              <div>Trucking Name:</div>
-              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '15px'}}></div>
+            <div style={{ display: 'flex', marginBottom: 7, alignItems: 'baseline', justifyContent: 'flex-start' }}>
+              <div style={{ width: '85px' }}>Trucking Name:</div>
+              <div style={{ width: '150px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '15px'}}></div>
             </div>
-            <div style={{ display: 'flex', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
-              <div>Date and Time:</div>
-              <div style={{ width: '180px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '15px'}}></div>
+            <div style={{ display: 'flex', marginBottom: 7, alignItems: 'baseline', justifyContent: 'flex-start' }}>
+              <div style={{ width: '85px' }}>Date and Time:</div>
+              <div style={{ width: '150px', borderBottomWidth: '1px', borderBottom: '1px solid black', marginLeft: '15px'}}></div>
             </div>
           </div>
           <div>
-            <div style={{ display: 'flex', width: '290px', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', width: '290px', marginBottom: 7, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>TRUCK PLATE NO.:</div>
               <div style={{ width: '60%', marginLeft: '15px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
             </div>
-            <div style={{ display: 'flex', width: '290px', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', width: '290px', marginBottom: 7, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>DRIVER NAME:</div>
               <div style={{ width: '60%', marginLeft: '15px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
-                <div style={{ marginTop: '23px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+                <div style={{ marginTop: '19px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
               </div>
             </div>
-            <div style={{ display: 'flex', width: '290px', marginBottom: 11, alignItems: 'baseline', justifyContent: 'flex-end' }}>
+            <div style={{ display: 'flex', width: '290px', marginBottom: 7, alignItems: 'baseline', justifyContent: 'flex-end' }}>
               <div>HELPER NAME:</div>
               <div style={{ width: '60%', marginLeft: '15px', display: 'flex', flexDirection: 'column' }}>
                 <div style={{ borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
-                <div style={{ marginTop: '23px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
+                <div style={{ marginTop: '19px', borderBottomWidth: '1px', borderBottom: '1px solid black'}}></div>
               </div>
             </div>
           </div>
