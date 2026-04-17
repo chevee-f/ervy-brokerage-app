@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Button, Card, Checkbox, Input, Space, Table, Typography } from 'antd'
 import { useQuery } from 'convex/react'
 import { api } from '../../../convex/_generated/api'
+import ervyLogo from '../../assets/ervy-logo.png'
 import styles from './Index.module.scss'
 
 /** Overview page for the Motortrade client. */
@@ -338,7 +339,18 @@ export function MotortradePage() {
       {/* Printable DOM block for printing selected record */}
       {selected && selectedId && (
         <div className={styles.printableDiv} id={`viewer-content-${selectedId}`}>
-          <div style={{ textAlign: 'center', marginBottom: 7 }}>ERVY LOGISTICS</div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: 10,
+              marginBottom: 7,
+            }}
+          >
+            <img src={ervyLogo} alt="ERVY LOGISTICS" style={{ width: '30px', display: 'block' }} />
+            <div style={{ fontWeight: 700, fontSize: 20 }}>ERVY LOGISTICS</div>
+          </div>
           <div style={{ textAlign: 'center', marginBottom: 7, fontSize: 14 }}>PRK BANAWAG TAWAGAN NORTE, LABANGAN ZAMBOANGA DEL SUR</div>
           <div style={{ textAlign: 'center', marginBottom: 7 }}>Cp. # 09451659947 / 09451098670</div>
           <div style={{ textAlign: 'center', marginBottom: 7, fontSize: 14 }}>DELIVERY RECEIPT</div>
